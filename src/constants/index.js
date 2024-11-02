@@ -20,3 +20,8 @@ export const headerMenu = [
     url: "#contact"
   }
 ];
+
+export const homeText = {
+  title: "Hello!",
+  desc: ["Welcome", "to", "my portfolio site!"]
+}
