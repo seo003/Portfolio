@@ -1,6 +1,7 @@
 <script setup> 
 import {headerMenu} from "../constants";
 </script>
+
 <template>
   <header id="header" role="banner">
     <div class="header_inner">
@@ -66,7 +67,13 @@ import {headerMenu} from "../constants";
 .header_profile {
   display: flex;
   align-items: center;
-}
+  a {
+      text-transform: uppercase;
+      font-size: 16px;
+      padding: 14px;
+      position: relative;
+    }
+  }
 
 .header_menu {
   ul {
@@ -78,7 +85,7 @@ import {headerMenu} from "../constants";
 
     a {
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 16px;
       padding: 14px;
       position: relative;
     }
