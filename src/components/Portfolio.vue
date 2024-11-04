@@ -1,65 +1,76 @@
+<script setup>
+import { portText } from "../constants";
+</script>
+
 <template>
+  <section id="port">
+    <div class="port_inner">
+      <h2 class="port_title">
+        portfolio
+      </h2>
+      <section class="gallery">
+        <div class="row">
+          <ul>
+            <li v-for="(item, index) in portText" :key="index">
+              <div class="image-container">
+                <img src="../assets/images/image.png" alt="">
+                <div class="description_overlay">
+                  <div class="description_content">
+                    <b>{{ item.title }} ({{ item.date }})</b>
+                    <p>{{ item.desc }}</p>
+                    <a :href="item.link" target="_blank">{{ item.link }}</a>
+                  </div>
+                </div>
+              </div>
+            </li>
 
-  <section class="gallery">
-    <div class="row">
-      <ul>
-        <li>
-          <a href="#item01">
-            <img src="../assets/images/image.png" alt="">
-          </a>
-        </li>
-        <li>
-          <a href="#item01">
-            <img src="../assets/images/image.png" alt="">
-          </a>
-        </li>
-        <!-- li 추가 -->
-      </ul>
-    </div> <!-- / row -->
+          </ul>
+        </div> <!-- / row -->
+      </section>
+      <!-- Item 01 -->
+      <div id="item01" class="port">
+        <div class="row">
+          <div class="description">
+            <h1>Item 01</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est.
+              Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
+          </div>
 
-    <!-- Item 01 -->
-    <div id="item01" class="port">
-
-      <div class="row">
-        <div class="description">
-          <h1>Item 01</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est.
-            Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
+          <a href="#" class="close">X</a>
+          <img src="../assets/images/image.png" alt="">
         </div>
-
-        <a href="#" class="close">X</a>
-        <img src="../assets/images/image.png" alt="">
       </div>
-    </div> <!-- / row -->
-    <!-- item 추가 -->
+      <!-- item 추가 -->
 
-  </section> <!-- / projects -->
-
+    </div>
+  </section>
 
 </template>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const galleryItems = document.querySelectorAll('.gallery ul li a');
-  const closeButton = document.querySelector('.close');
 
   galleryItems.forEach(item => {
     item.addEventListener('click', function (event) {
-      event.preventDefault(); // Prevent default link behavior
+      event.preventDefault();
       const targetId = this.getAttribute('href');
+      const targetItem = document.querySelector(targetId);
 
-      const targetItem = document.getElementById(targetId.slice(1)); // Remove leading "#"
-
-      // Open target item
-      targetItem.classList.add('item_open');
+      if (targetItem) {
+        targetItem.classList.add('item_open');
+      }
     });
   });
 
-  closeButton.addEventListener('click', function () {
-    const openItems = document.querySelectorAll('.item_open');
-    openItems.forEach(item => item.classList.remove('item_open'));
+  document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('close')) {
+      const openItems = document.querySelectorAll('.item_open');
+      openItems.forEach(item => item.classList.remove('item_open'));
+    }
   });
 });
+
 </script>
 
 <style lang="scss">
@@ -72,12 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 }
 
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  line-height: 1.5;
-  color: #333;
-}
 
 a {
   color: #fff;
@@ -104,35 +109,45 @@ a {
   overflow: hidden;
 }
 
-// // HEADER
-// header {
-// 	background-color: #84b4b1;
-// 	color: #fff;
-// 	text-align: center;
-// 	padding: 30px 0 120px;
+.port_inner {
+  padding: 12%;
+  justify-content: space-between;
 
-// 	h1 {
-// 		text-align: center;
-// 		text-transform: uppercase;
-// 		font-size: 65px;
-// 		font-weight: 400;
-// 		letter-spacing: 3px;
-// 		line-height: 0.8;
-// 		padding-top: 50px;
-// 		font-family: 'Montserrat', sans-serif;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 
-// 		span {
-// 			text-transform: uppercase;
-// 			letter-spacing: 7px;
-// 			font-size: 25px;
-// 			line-height: 1;
-// 		}
-// 	}
+  .port_title {
+    position: sticky;
+    top: 70px;
+    left: 0;
+    height: 5vw;
+    font-size: 4vw;
+    font-weight: 900;
+    line-height: 1.4;
+    font-family: var(--mainKor-font);
+    text-transform: uppercase;
+    color: var(--black100);
+    border-bottom: 5px solid black;
+    z-index: 1;
+    margin-bottom: 0px;
 
-// 	p {
-// 		padding-top: 30px;
-// 	}
-// }
+    @media (max-width: 800px) {
+      width: 100%;
+      margin-bottom: 10vw;
+      font-size: 30px;
+      height: auto;
+      top: 68px;
+      background-color: var(--mainBg-color);
+    }
+
+    em {
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 2;
+    }
+  }
+}
 
 // PROJECTS
 .gallery {
@@ -144,55 +159,47 @@ a {
     padding-top: 50px;
     position: relative;
 
+    .image-container {
+      position: relative;
+      perspective: 1000px;
+
+      img {
+        width: 100%;
+        transition: transform 0.5s;
+      }
+
+      .description_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      .description_content {
+        margin: 3%;
+      }
+
+      &:hover img {
+        transform: rotateY(180deg);
+      }
+
+      &:hover .description_overlay {
+        opacity: 1;
+      }
+    }
+
     li {
       @extend %col;
       margin-bottom: 20px;
-      width: 23.24561403508772%;
+      width: 30%;
       position: relative;
-
-      a {
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        line-height: 0;
-
-        &:before {
-          position: absolute;
-          width: 32px;
-          height: 32px;
-          top: 40%;
-          left: 50%;
-          margin: -14px 0 0 -16px;
-          background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTcuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+PCEtLURPQ1RZUEUgU1ZHIFBVQkxJQyAiLS9fL1czQy8vRFREQyAvLy9FVCBTVkcgMS4xLy9FbiAiLSIvLy9QVVJMMHR0eC8vLy9TRTtqLTQ2LTkiPgogPHN2ZyB2ZXJzaW9uPSIxLjEiCiAgaWQ9InN2ZzIiIG5hbWVzcGFjZT0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcgaW5rc2NhcGU9IjB4Ij8+CiA8L3N2Zz4K) no-repeat;
-          content: '';
-          opacity: 0;
-          z-index: 1;
-          transition: all 0.3s linear;
-        }
-
-        &:hover:before {
-          top: 50%;
-          opacity: 1;
-        }
-
-        &:after {
-          position: absolute;
-          width: 100%;
-          top: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.3);
-          content: '';
-          opacity: 0;
-          transition: all 0.3s linear;
-        }
-
-        &:hover:after {
-          opacity: 1;
-        }
-      }
     }
   }
 }
@@ -218,7 +225,7 @@ a {
   }
 
   .description {
-    float: left;
+    // float: left;
     width: 50%;
     max-height: 100%;
     padding: 0 40px 40px;
@@ -260,7 +267,7 @@ a {
   color: black;
   font-size: 30px;
   text-decoration: none;
-  
+
 
   .item_open & {
     opacity: 1;
