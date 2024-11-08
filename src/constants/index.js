@@ -1,3 +1,9 @@
+import portfolioImg from '../assets/images/portfolio.png';
+import eengImg from '../assets/images/eeng.png';
+import inhaTourImg from '../assets/images/inhaTour.png';
+import inhaTimeImg from '../assets/images/inhaTime.png';
+import nextoonImg from '../assets/images/nextoon.png';
+
 export const headerMenu = [
   {
     menu: "home",
@@ -48,32 +54,37 @@ export const skillText = [
 export const portText = [
   {
     title: "Portfolio",
-    date: "2024.10 ~ 2024.11(2개월)",
+    date: "2024.10 ~ 2024.11 [2개월]",
     desc: "포트폴리오 사이트(진행 중)",
-    link: "https://github.com/seo003/Front-End",
+    link: "https://github.com/seo003/Portfolio",
+    img: portfolioImg,
   },
   {
     title: "EENG",
-    date: "2024.03 ~ 2024.06(4개월)",
+    date: "2024.03 ~ 2024.06 [4개월]",
     desc: "영어 학습 웹 애플리케이션",
     link: "https://github.com/seo003/EEng",
+    img: eengImg,
   },
   {
     title: "InhaTour",
-    date: "2024.03 ~ 2024.06(4개월)",
+    date: "2024.03 ~ 2024.06 [4개월]",
     desc: "인하공업전문대학 학교 소개 및 투어 예약 웹 애플리케이션",
-    link: "https://github.com/seo003/InhaTour"
+    link: "https://github.com/seo003/InhaTour",
+    img: inhaTourImg,
   },
   {
     title: "InhaTime",
-    date: "2024.05 ~ 2024.06(2개월)",
+    date: "2024.05 ~ 2024.06 [2개월]",
     desc: "효율적인 시간 관리와 학습 목표 달성을 돕기 위한 안드로이드 기반 모바일 애플리케이션",
-    link: "https://github.com/seo003/InhaTime"
+    link: "https://github.com/seo003/InhaTime",
+    img: inhaTimeImg,
   },
   {
     title: "Nextoon",
-    date: "2023.10 ~ 2023.12(3개월)",
+    date: "2023.10 ~ 2023.12 [3개월]",
     desc: "웹툰관련 커뮤니티 웹 애플리케이션",
-    link: "https://github.com/seo003/nextoon"
+    link: "https://github.com/seo003/nextoon",
+    img: nextoonImg,
   },
 ]

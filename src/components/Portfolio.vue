@@ -13,7 +13,7 @@ import { portText } from "../constants";
           <ul>
             <li v-for="(item, index) in portText" :key="index">
               <div class="image-container">
-                <img src="../assets/images/image.png" alt="">
+                <img :src="item.img" :alt="item.title">
                 <div class="description_overlay">
                   <div class="description_content">
                     <b>{{ item.title }} ({{ item.date }})</b>
@@ -27,51 +27,14 @@ import { portText } from "../constants";
           </ul>
         </div> <!-- / row -->
       </section>
-      <!-- Item 01 -->
-      <div id="item01" class="port">
-        <div class="row">
-          <div class="description">
-            <h1>Item 01</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est.
-              Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
-          </div>
-
-          <a href="#" class="close">X</a>
-          <img src="../assets/images/image.png" alt="">
-        </div>
-      </div>
-      <!-- item 추가 -->
+      
 
     </div>
   </section>
 
 </template>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const galleryItems = document.querySelectorAll('.gallery ul li a');
 
-  galleryItems.forEach(item => {
-    item.addEventListener('click', function (event) {
-      event.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetItem = document.querySelector(targetId);
-
-      if (targetItem) {
-        targetItem.classList.add('item_open');
-      }
-    });
-  });
-
-  document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('close')) {
-      const openItems = document.querySelectorAll('.item_open');
-      openItems.forEach(item => item.classList.remove('item_open'));
-    }
-  });
-});
-
-</script>
 
 <style lang="scss">
 * {
@@ -162,6 +125,8 @@ a {
     .image-container {
       position: relative;
       perspective: 1000px;
+      width: 100%; 
+      height: 200px; 
 
       img {
         width: 100%;
@@ -200,6 +165,9 @@ a {
       margin-bottom: 20px;
       width: 30%;
       position: relative;
+      // border: 2px solid #ddd; /* 테두리 색과 두께 설정 */
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+      overflow: hidden;
     }
   }
 }
