@@ -5,7 +5,9 @@ import Skills from "@/components/Skills.vue"
 import Portfolio from "@/components/Portfolio.vue"
 import Contact from "@/components/Contact.vue"
 import Footer from "@/components/Footer.vue"
+import "../assets/scss/style.scss"
 </script>
+
 <template>
   <Header></Header>
   <main id="main" role="main">

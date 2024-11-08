@@ -8,6 +8,7 @@ import { portText } from "../constants";
       <h2 class="port_title">
         portfolio
       </h2>
+      <h3>이미지에 마우스를 올리면 자세한 정보를 볼 수 있습니다!</h3>
       <section class="gallery">
         <div class="row">
           <ul>
@@ -70,6 +71,12 @@ a {
   float: left;
   margin: 0 0.8771929824561403%;
   overflow: hidden;
+}
+
+h3 {
+  position: sticky;
+  top: 170px;
+  z-index: 1;
 }
 
 .port_inner {
@@ -165,8 +172,7 @@ a {
       margin-bottom: 20px;
       width: 30%;
       position: relative;
-      // border: 2px solid #ddd; /* 테두리 색과 두께 설정 */
-      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
       overflow: hidden;
     }
   }
@@ -223,24 +229,4 @@ a {
   }
 }
 
-.close {
-  width: 21px;
-  height: 21px;
-  position: absolute;
-  right: 10px;
-  top: -121px;
-  opacity: 1;
-  z-index: 1004;
-  transition: all 0.1s ease-in-out;
-  color: black;
-  font-size: 30px;
-  text-decoration: none;
-
-
-  .item_open & {
-    opacity: 1;
-    top: 0px;
-    transition: all 0.3s ease-in-out;
-  }
-}
 </style>
