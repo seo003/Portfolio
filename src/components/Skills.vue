@@ -3,33 +3,124 @@ import { skillText } from "../constants";
 </script>
 
 <template>
-  <section id="skill">
+    <section id="skill">
         <div class="skill_inner">
             <h2 class="skill_title">
                 Skills
             </h2>
-            <div class="skill_desc">
-                <div v-for="(skill, key) in skillText" :key="key">
-                    <!-- <span>{{ key+1 }}.</span> -->
-                    <h3>{{ skill.title }}</h3>
-                    <p>{{ skill.desc }}</p>
-                </div>
+            <div>
+                <article class="paper">
+                    <div class="content_wrapper" v-for="(skill, index) in skillText" :key="index">
+
+                        <section class="content">
+                            <div class="row">
+                                <div class="content_cat">
+                                    <h3>{{ skill.title }}</h3>
+                                </div>
+                                <div class="content_text">
+                                    <ul>
+                                        <li v-for="(word, idx) in skill.desc.split(',')" :key="idx">
+                                            <span v-if="idx % 3 === 0">{{ word.trim() }}</span>
+                                            <span v-if="idx % 3 !== 0">{{ word.trim() }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                </article>
+
             </div>
         </div>
     </section>
+
 </template>
 
 <style lang="scss">
+/* Information */
+.paper {
+    margin: 8% 8%;
+    background-color: white;
+    padding: 0.5em 0;
+    border: 1px solid #e0e0e0;
+    border-bottom-width: 3px;
+    border-radius: 1%;
+    box-shadow: 7px 7px 20px -10px #000;
+}
+
+/* Content Part */
+.content {
+    display: table;
+    width: 100%;
+    padding-top: 1.5em;
+
+    &:last-child {
+        padding-bottom: 1.5em;
+    }
+
+    .row {
+        display: table-row;
+
+        div {
+            display: table-cell;
+        }
+    }
+}
+
+.content_cat {
+    letter-spacing: 1px;
+    text-align: center;
+    vertical-align: middle;
+    width: 36.66%;
+}
+
+.content_text {
+    border-left: 1px solid #e0e0e0;
+    // transition: border 0.66s ease-in;
+    
+
+    .big-text {
+        vertical-align: top;
+        padding-top: 1.25em;
+    }
+
+    ul {
+        padding: 0;
+        width: 85%;
+        margin-left: 1.5em;
+        justify-content: center;
+
+        li {
+            font-family: "Open Sans";
+            font-size: 0.7em;
+            display: inline-block;
+            width: 30%;
+            color: #424242;
+            font-weight: 600;
+            font-size: 1em;
+            text-align: center;
+
+
+            a {
+                text-decoration: none;
+                color: #0277bd;
+            }
+        }
+    }
+}
+
+
 #skill h3 {
-  position: static;
+    position: static;
 }
 
 .skill_inner {
     padding: 1% 12%;
-    display: flex;
     justify-content: space-between;
 
-    @media (max-width: 800px){ 
+    @media (max-width: 800px) {
         flex-direction: column;
     }
 
@@ -37,18 +128,18 @@ import { skillText } from "../constants";
         position: sticky;
         top: 70px;
         left: 0;
-        width: 48%;
         height: 5vw;
         font-size: 4vw;
         font-weight: 900;
-        line-height: 1.6;
+        line-height: 1.4;
         font-family: var(--mainKor-font);
         text-transform: uppercase;
         color: var(--black100);
-        border-bottom: 0.4vw solid var(--black100);
-        text-decoration:underline;
+        border-bottom: 5px solid black;
+        z-index: 1;
+        margin-bottom: 0px;
 
-        @media (max-width: 800px){ 
+        @media (max-width: 800px) {
             width: 100%;
             margin-bottom: 10vw;
             font-size: 30px;
@@ -57,40 +148,6 @@ import { skillText } from "../constants";
             background-color: var(--mainBg-color);
         }
 
-        em {
-            font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 2;
-        }
-    }
-    .skill_desc {
-        width: 50%;
-
-        @media (max-width: 800px){ 
-            width: 100%;
-        }
-
-        span {
-            font-size: 5vw;
-            line-height: 1;
-            font-weight: 900;
-            line-height: 1.3;
-            font-family: var(--mainNum-font);
-
-            @media (max-width: 800px){ 
-                font-size: 20vw;
-            }
-        }
-        h3 {
-            font-size: 1.5rem;
-            text-decoration: underline;
-            text-underline-position: under;
-            margin-bottom: 1vw;
-        }
-        p {
-            margin-bottom: 10vh;
-            font-size: 1.1rem;
-        }
     }
 }
 </style>
