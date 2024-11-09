@@ -24,9 +24,8 @@ import { portText } from "../constants";
                 </div>
               </div>
             </li>
-
           </ul>
-        </div> <!-- / row -->
+        </div>
       </section>
       
 
@@ -39,7 +38,7 @@ import { portText } from "../constants";
 
 <style lang="scss">
 .port_inner {
-  padding: 12%;
+  padding: 1% 12%;
   justify-content: space-between;
 
   @media (max-width: 800px) {
@@ -86,7 +85,7 @@ import { portText } from "../constants";
 
 // PROJECTS
 .gallery {
-  padding: 40px 0 300px;
+  padding: 40px 0 40px;
   position: relative;
   overflow: hidden;
 

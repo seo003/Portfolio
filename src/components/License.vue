@@ -18,7 +18,7 @@
 
 <style lang="scss">
 .license_inner {
-  padding: 12%;
+  padding: 1% 12%;
   justify-content: space-between;
 
   @media (max-width: 800px) {

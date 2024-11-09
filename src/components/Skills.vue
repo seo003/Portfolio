@@ -25,7 +25,7 @@ import { skillText } from "../constants";
 }
 
 .skill_inner {
-    padding: 12%;
+    padding: 1% 12%;
     display: flex;
     justify-content: space-between;
 
