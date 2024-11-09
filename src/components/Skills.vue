@@ -7,10 +7,6 @@ import { skillText } from "../constants";
         <div class="skill_inner">
             <h2 class="skill_title">
                 Skills
-                <!-- add .left and/or
-                <span class="arrow left right"> 
-                  <span class="head"></span>
-                </span>	 -->
             </h2>
             <div class="skill_desc">
                 <div v-for="(skill, key) in skillText" :key="key">
@@ -24,50 +20,10 @@ import { skillText } from "../constants";
 </template>
 
 <style lang="scss">
-$arrow-thickness: 3px;
-$arrow-head-size: 10px;
-$arrow-length: 100%; /*$arrow-head-size * 5*/
-$arrow-color: #292B30;
-
-.arrow {
-	height: $arrow-thickness;
-	width: $arrow-length;
-	background: $arrow-color;
-	display: inline-block;
-	position: relative;
-
-	&.left:before, &.right:after {
-		content: "";
-		display: block;
-		width: $arrow-head-size;
-		height: $arrow-head-size;
-		position: absolute;
-		border: $arrow-thickness solid $arrow-color;      
-	}
-
-	&.left {
-		&:before {
-			transform: rotate(45deg) translateY(-55%);
-			left: -$arrow-thickness * 2;
-			border-top: 0;
-			border-right: 0;
-		}
-	}
-
-	&.right {
-		&:after {
-			transform: rotate(45deg) translateY(-55%);
-			right: $arrow-thickness * 2;
-			border-bottom: 0;
-			border-left: 0;
-		}
-	}
-
-}
 #skill h3 {
   position: static;
-  /* sticky를 해제 */
 }
+
 .skill_inner {
     padding: 12%;
     display: flex;

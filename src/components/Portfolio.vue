@@ -38,47 +38,6 @@ import { portText } from "../constants";
 
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
-}
-
-
-a {
-  color: #fff;
-}
-
-.row {
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0;
-  clear: both;
-
-  img {
-    max-width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-%col {
-  float: left;
-  margin: 0 0.8771929824561403%;
-  overflow: hidden;
-}
-
-h3 {
-  position: sticky;
-  top: 170px;
-  z-index: 1;
-}
-
 .port_inner {
   padding: 12%;
   justify-content: space-between;
@@ -117,6 +76,12 @@ h3 {
       line-height: 2;
     }
   }
+}
+
+%col {
+  float: left;
+  margin: 0 0.8771929824561403%;
+  overflow: hidden;
 }
 
 // PROJECTS

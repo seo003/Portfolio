@@ -17,20 +17,6 @@
 
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
-}
-
-
-a {
-  color: #fff;
-}
-
 .license_inner {
   padding: 12%;
   justify-content: space-between;

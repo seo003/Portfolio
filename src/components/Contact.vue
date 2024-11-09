@@ -24,26 +24,6 @@
 </template>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
-}
-
-
-a {
-  color: #fff;
-}
-
-%col {
-  float: left;
-  margin: 0 0.8771929824561403%;
-  overflow: hidden;
-}
-
 #contact h3 {
   position: static;
   /* sticky를 해제 */
@@ -109,15 +89,6 @@ a {
     color: #78788c;
     border-bottom: 3px solid #78788c;
   }
-
-  // p:before {
-  //   content: attr(type);
-  //   display: block;
-  //   margin: 28px 0 0;
-  //   font-size: 14px;
-  //   color: black;
-  // }
-
 
   div {
     content: 'Hi';
