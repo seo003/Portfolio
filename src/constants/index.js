@@ -18,6 +18,10 @@ export const headerMenu = [
     url: "#port"
   },
   {
+    menu: "license",
+    url: "#license"
+  },
+  {
     menu: "contact",
     url: "#contact"
   }

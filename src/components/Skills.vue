@@ -64,7 +64,10 @@ $arrow-color: #292B30;
 	}
 
 }
-
+#skill h3 {
+  position: static;
+  /* sticky를 해제 */
+}
 .skill_inner {
     padding: 12%;
     display: flex;

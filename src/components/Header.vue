@@ -13,7 +13,7 @@ import {headerMenu} from "../constants";
         <ul>
           <li v-for="{menu, url} in headerMenu" :key="url">
             <a :href="url">{{menu}}</a>
-          </li> <!--intro, skill, portfolio, contact-->
+          </li>
         </ul>
       </nav>
       <div class="header_profile">
