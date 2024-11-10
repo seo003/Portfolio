@@ -35,7 +35,7 @@ import { homeText } from "../constants";
 
 <style lang="scss">
 #home {
-  height: 100vh;
+  height: 90vh;
 }
 
 .home_inner {
@@ -61,6 +61,7 @@ import { homeText } from "../constants";
     text-indent: -0.5vw;
     letter-spacing: -0.3vw;
     margin-top: 12%;
+    margin-bottom: 3%;
 
     @media (max-width: 320px) {
       display: none;
