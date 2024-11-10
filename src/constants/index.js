@@ -62,6 +62,7 @@ export const portText = [
     desc: "포트폴리오 사이트(진행 중)",
     link: "https://github.com/seo003/Portfolio",
     img: portfolioImg,
+    type: "web",
   },
   {
     title: "EENG",
@@ -69,6 +70,7 @@ export const portText = [
     desc: "영어 학습 웹 애플리케이션",
     link: "https://github.com/seo003/EEng",
     img: eengImg,
+    type: "web",
   },
   {
     title: "InhaTour",
@@ -76,6 +78,7 @@ export const portText = [
     desc: "인하공업전문대학 학교 소개 및 투어 예약 웹 애플리케이션",
     link: "https://github.com/seo003/InhaTour",
     img: inhaTourImg,
+    type: "web",
   },
   {
     title: "InhaTime",
@@ -83,6 +86,7 @@ export const portText = [
     desc: "효율적인 시간 관리와 학습 목표 달성을 돕기 위한 안드로이드 기반 모바일 애플리케이션",
     link: "https://github.com/seo003/InhaTime",
     img: inhaTimeImg,
+    type: "app",
   },
   {
     title: "Nextoon",
@@ -90,5 +94,6 @@ export const portText = [
     desc: "웹툰관련 커뮤니티 웹 애플리케이션",
     link: "https://github.com/seo003/nextoon",
     img: nextoonImg,
+    type: "web",
   },
 ]

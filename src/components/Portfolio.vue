@@ -1,5 +1,18 @@
 <script setup>
-import { portText } from "../constants";
+import { ref, computed } from 'vue';
+import { portText } from '../constants';
+
+const filter = ref('all'); // 기본 필터: 'all'
+
+const filteredPortText = computed(() =>
+  filter.value === 'all' ? portText : portText.filter(item => item.type === filter.value)
+);
+
+// type 추출(라디오박스 선택지)
+const uniqueTypes = computed(() => {
+  const types = portText.map(item => item.type);
+  return ['all', ...new Set(types)];
+});
 </script>
 
 <template>
@@ -9,10 +22,18 @@ import { portText } from "../constants";
         portfolio
       </h2>
       <h3>이미지에 마우스를 올리면 자세한 정보를 볼 수 있습니다!</h3>
+
+      <div class="radio_inner">
+        <label v-for="(type, index) in uniqueTypes" :key="index">
+          <input type="radio" :value="type" v-model="filter" />
+          <h3>{{ type.toUpperCase() }}</h3>
+        </label>
+      </div>
+
       <section class="gallery">
         <div class="row">
           <ul>
-            <li v-for="(item, index) in portText" :key="index">
+            <li v-for="(item, index) in filteredPortText" :key="index">
               <div class="image-container">
                 <img :src="item.img" :alt="item.title">
                 <div class="description_overlay">
@@ -27,14 +48,9 @@ import { portText } from "../constants";
           </ul>
         </div>
       </section>
-      
-
     </div>
   </section>
-
 </template>
-
-
 
 <style lang="scss">
 .port_inner {
@@ -77,27 +93,79 @@ import { portText } from "../constants";
   }
 }
 
-%col {
-  float: left;
-  margin: 0 0.8771929824561403%;
-  overflow: hidden;
+.radio_inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 190px;
+  z-index: 10;
+
+  label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+    margin-right: 5%;
+
+    input {
+      position: absolute;
+      left: -9999px;
+
+      &:checked+h3 {
+        background-color: rgba(116, 99, 99, 0.1);
+
+        &:before {
+          box-shadow: inset 0 0 0 0.4375em black;
+        }
+      }
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      padding: 0.375em 0.75em 0.375em 0.375em;
+      border-radius: 99em;
+      transition: 0.25s ease;
+
+      &:hover {
+        background-color: rgba(116, 99, 99, 0.1);
+      }
+
+      &:before {
+        display: flex;
+        flex-shrink: 0;
+        content: "";
+        background-color: #fff;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        margin-right: 0.375em;
+        transition: 0.25s ease;
+        box-shadow: inset 0 0 0 0.125em black;
+      }
+    }
+  }
 }
 
 // PROJECTS
 .gallery {
-  padding: 40px 0 40px;
+  padding: 40px 0 0px;
   position: relative;
   overflow: hidden;
 
   ul {
-    padding-top: 50px;
+    // padding-top: 50px;
     position: relative;
 
     .image-container {
       position: relative;
       perspective: 1000px;
-      width: 100%; 
-      height: 200px; 
+      width: 100%;
+      height: 200px;
 
       img {
         width: 100%;
@@ -132,7 +200,8 @@ import { portText } from "../constants";
     }
 
     li {
-      @extend %col;
+      float: left;
+      margin: 0 0.8771929824561403%;
       margin-bottom: 20px;
       width: 30%;
       position: relative;
@@ -141,56 +210,4 @@ import { portText } from "../constants";
     }
   }
 }
-
-// PORT
-.port {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding-top: 100px;
-  background: #ffffff;
-  background-color: rgb(241, 239, 239);
-  z-index: 103;
-  visibility: hidden;
-  transform: translateY(-100%);
-  border-bottom: 1px solid #d0d0d0;
-  transition: all 0.5s ease-in-out;
-
-  img {
-    width: 50%;
-  }
-
-  .description {
-    // float: left;
-    width: 50%;
-    max-height: 100%;
-    padding: 0 40px 40px;
-    overflow: auto;
-
-    h1 {
-      font-size: 35px;
-      line-height: 2.3;
-      padding: 0;
-    }
-
-    >* {
-      opacity: 0;
-      transition: all 0.5s linear;
-    }
-  }
-
-  &.item_open {
-    visibility: visible;
-    transform: translateY(0%);
-    transition: all 0.4s ease-in-out;
-
-    >* {
-      opacity: 1;
-      transition-delay: 0.5s;
-    }
-  }
-}
-
 </style>
