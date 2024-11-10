@@ -39,7 +39,6 @@ import { skillText } from "../constants";
 </template>
 
 <style lang="scss">
-/* Information */
 .paper {
     margin: 8% 8%;
     background-color: white;
@@ -50,7 +49,7 @@ import { skillText } from "../constants";
     box-shadow: 7px 7px 20px -10px #000;
 }
 
-/* Content Part */
+/* Content */
 .content {
     display: table;
     width: 100%;
@@ -78,7 +77,6 @@ import { skillText } from "../constants";
 
 .content_text {
     border-left: 1px solid #e0e0e0;
-    // transition: border 0.66s ease-in;
     
 
     .big-text {
@@ -93,7 +91,6 @@ import { skillText } from "../constants";
         justify-content: center;
 
         li {
-            font-family: "Open Sans";
             font-size: 0.7em;
             display: inline-block;
             width: 30%;
@@ -101,7 +98,7 @@ import { skillText } from "../constants";
             font-weight: 600;
             font-size: 1em;
             text-align: center;
-
+            padding-top: 1%;
 
             a {
                 text-decoration: none;
@@ -147,7 +144,6 @@ import { skillText } from "../constants";
             top: 68px;
             background-color: var(--mainBg-color);
         }
-
     }
 }
 </style>
