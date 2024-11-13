@@ -24,7 +24,7 @@ import { headerMenu } from "../constants";
 
 <style lang="scss">
 .header_menu {
-  margin: 0 auto;
+  margin-right:11%;
   text-align: center;
   padding: 1em;
 
@@ -126,7 +126,7 @@ import { headerMenu } from "../constants";
   justify-content: space-between;
   background-color: rgba(116, 99, 99, 0.1);
   backdrop-filter: blur(15px);
-  padding: 1rem;
+  padding: 1em;
 }
 
 .header_logo {
@@ -134,6 +134,7 @@ import { headerMenu } from "../constants";
   text-align: center;
   text-transform: uppercase;
   line-height: 1;
+  margin-left:11%;
 
   em {
     font-size: 12px;

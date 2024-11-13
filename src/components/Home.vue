@@ -5,32 +5,13 @@ import { homeText } from "../constants";
 <template>
   <section id="home">
     <div class="home_inner">
-      <h2 class="home_title">
-        {{ homeText.title }}
-      </h2>
       <div class="home_text">
-        <div class="text">
-          <div>{{ homeText.desc[0] }}</div>
-          <div>{{ homeText.desc[1] }}</div>
-          <div>{{ homeText.desc[2] }}</div>
-        </div>
-        <div class="img">
-          <img src="#" alt="">
-        </div>
-      </div>
-      <div class="home_lines bottom" aria-hidden="true">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+        <h1>WELCOME!</h1>
+        <span class="cursor">_</span>
+        <p>Welcome to My Portfolio Site!</p>
       </div>
     </div>
   </section>
-
-
 </template>
 
 <style lang="scss">
@@ -68,136 +49,49 @@ import { homeText } from "../constants";
     }
   }
 
-  .home_text {
-    width: 100%;
-    height: 40vh;
-    background-color: var(--black);
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-
-    .text {
-      font-size: 3vw;
-      line-height: 1;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-decoration: underline;
-      text-align: center;
-      position: relative;
-      z-index: 100;
-      transition: all 0.3s;
-      cursor: all-scroll;
-
-      @media (max-width: 800px) {
-        font-size: 24px;
-      }
-    }
-
-    .img {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 30vh;
-      height: 30vh;
-      border-radius: 50%;
-      overflow: hidden;
-      filter: grayscale(100%);
-      transition: all 0.3s;
-
-      @media (max-width: 320px) {
-        width: 20vh;
-        height: 20vh;
-      }
-    }
-
-
-
-    &:hover .img {
-      filter: grayscale(0);
+  @keyframes RevealText {
+    from {
+      width: 0;
     }
   }
 
-  .home_lines {
-    width: 100%;
-
-    .line {
-      display: block;
-      width: 100%;
-      height: 1px;
-      background-color: var(--black);
-      margin-bottom: 0.5vw;
-
-      &:nth-child(1) {
-        height: 1px;
-      }
-
-      &:nth-child(2) {
-        height: 2px;
-      }
-
-      &:nth-child(3) {
-        height: 5px;
-      }
-
-      &:nth-child(4) {
-        height: 9px;
-      }
-
-      &:nth-child(5) {
-        height: 13px;
-      }
-
-      &:nth-child(6) {
-        height: 17px;
-      }
-
-      &:nth-child(7) {
-        height: 25px;
-      }
+  @keyframes Blink {
+    0% {
+      opacity: 0
     }
 
-    &.bottom {
-      .line {
-        margin-top: 0.5vw;
-        margin-bottom: 0;
-        display: none;
+    100% {
+      opacity: 1
+    }
+  }
 
-        @media (max-width: 800px) {
-          display: block;
-        }
+  .home_text {
+    font-family: "Consolas", fixed-width;
+    margin: 0 auto;
+    max-width: 70%;
+    padding-top: 120px;
 
-        &:nth-child(1) {
-          height: 25px;
-        }
+    h1 {
+      animation: RevealText 3s steps(8, end);
+      display: inline-block;
+      font-size: 80px;
+      overflow: hidden;
+      position: relative;
+      white-space: no-wrap;
+      width: 355px;
+      margin-bottom:auto;
+    }
 
-        &:nth-child(2) {
-          height: 17px;
-        }
+    .cursor {
+      animation: Blink 1s ease-in 0s infinite;
+      font-size: 80px;
+      font-weight: bold;
+      position: relative;
+      top: -40px;
+    }
 
-        &:nth-child(3) {
-          height: 13px;
-        }
-
-        &:nth-child(4) {
-          height: 9px;
-        }
-
-        &:nth-child(5) {
-          height: 5px;
-        }
-
-        &:nth-child(6) {
-          height: 2px;
-        }
-
-        &:nth-child(7) {
-          height: 1px;
-        }
-      }
+    p {
+      font-size: 30px;
     }
   }
 }
