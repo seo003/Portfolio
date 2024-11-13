@@ -79,5 +79,6 @@
   max-width: calc(100vw - 40px);
   box-sizing: border-box;
   position: relative;
+  background-color:white;
 }
 </style>
