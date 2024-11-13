@@ -111,7 +111,7 @@ import { licenseText } from "../constants";
       position: absolute;
       width: 8px;
       height: 8px;
-      border: 8px solid salmon;
+      border: 8px solid #ADADAD;
       background-color: #fff;
       border-radius: 100%;
       top: 15%;
@@ -146,13 +146,13 @@ import { licenseText } from "../constants";
     }
 
     ul {
-      color: #aaa;
+      color: #969696;
       padding-left: 0;
       list-style-type: none;
 
       li:before {
         content: "–";
-        margin-right: .5em;
+        margin-right: 0.5em;
       }
     }
   }
