@@ -1,5 +1,5 @@
-<script setup> 
-import {headerMenu} from "../constants";
+<script setup>
+import { headerMenu } from "../constants";
 </script>
 
 <template>
@@ -9,16 +9,10 @@ import {headerMenu} from "../constants";
         <a href="/">portfolio</a>
         <em>Kim Seo Young</em>
       </div>
-      <nav class="header_menu">
-        <ul>
-          <li v-for="{menu, url} in headerMenu" :key="url">
-            <a :href="url">{{menu}}</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header_profile">
-        <a href="#profile">Profile</a>
+      <div class="header_menu borderXwidth">
+        <a v-for="{ menu, url } in headerMenu" :key="url" :href="url">{{ menu }}</a>
       </div>
+
     </div>
   </header>
 </template>
@@ -29,6 +23,89 @@ import {headerMenu} from "../constants";
 
 
 <style lang="scss">
+.header_menu {
+  margin: 0 auto;
+  text-align: center;
+  padding: 1em;
+
+  a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      position: absolute;
+      opacity: 0;
+      width: 0%;
+      height: 2px;
+      content: '';
+      background: black;
+      transition: all 0.3s;
+    }
+
+    &:before {
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      right: 0;
+      bottom: 0;
+    }
+
+    &:hover {
+
+      &:before,
+      &:after {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.borderXwidth {
+  a {
+
+    &:before,
+    &:after {
+      position: absolute;
+      opacity: 0;
+      width: 0%;
+      height: 2px;
+      content: '';
+      background: black;
+      transition: all 0.3s;
+    }
+
+    &:before {
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      right: 0;
+      bottom: 0;
+    }
+
+    &:hover {
+
+      &:before,
+      &:after {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
+}
+
 #header {
   position: fixed;
   left: 0;
@@ -64,47 +141,16 @@ import {headerMenu} from "../constants";
     color: var(--black200);
   }
 }
+
 .header_profile {
   display: flex;
   align-items: center;
+
   a {
-      text-transform: uppercase;
-      font-size: 16px;
-      padding: 14px;
-      position: relative;
-    }
-  }
-
-.header_menu {
-  ul {
-    padding: 0
-  }
-
-  li {
-    display: inline;
-
-    a {
-      text-transform: uppercase;
-      font-size: 16px;
-      padding: 14px;
-      position: relative;
-    }
-
-    a::before {
-      content: '';
-      width: calc(100% - 28px);
-      height: 1px;
-      background-color: var(--black);
-      position: absolute;
-      left: 14px;
-      bottom: 10px;
-      transform: scaleX(0);
-      transition: all 0.3s;
-    }
-
-    a:hover::before {
-      transform: scaleX(1);
-    }
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 14px;
+    position: relative;
   }
 }
 
