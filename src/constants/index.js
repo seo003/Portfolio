@@ -97,3 +97,15 @@ export const portText = [
     type: "web",
   },
 ]
+export const licenseText = [
+  {
+    title: "운전면허 2종보통",
+    date: "24.08.23",
+    company: "인천광역시경찰청",
+  }, 
+  {
+    title: "정보처리산업기사",
+    date: "24.09.10",
+    company: "한국산업인력공단",
+  }, 
+]
