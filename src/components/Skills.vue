@@ -10,11 +10,10 @@ import { skillText } from "../constants";
             </h2>
             <div>
                 <article class="paper">
-                    <div class="content_wrapper" v-for="(skill, index) in skillText" :key="index">
-
+                    <div class="paper_inner" v-for="(skill, index) in skillText" :key="index">
                         <section class="content">
-                            <div class="row">
-                                <div class="content_cat">
+                            <div class="content_inner">
+                                <div class="content_title">
                                     <h3>{{ skill.title }}</h3>
                                 </div>
                                 <div class="content_text">
@@ -39,76 +38,6 @@ import { skillText } from "../constants";
 </template>
 
 <style lang="scss">
-.paper {
-    margin: 8% 8%;
-    background-color: white;
-    padding: 0.5em 0;
-    border: 1px solid #e0e0e0;
-    border-bottom-width: 3px;
-    border-radius: 1%;
-    box-shadow: 7px 7px 20px -10px #000;
-}
-
-/* Content */
-.content {
-    display: table;
-    width: 100%;
-    padding-top: 1.5em;
-
-    &:last-child {
-        padding-bottom: 1.5em;
-    }
-
-    .row {
-        display: table-row;
-
-        div {
-            display: table-cell;
-        }
-    }
-}
-
-.content_cat {
-    letter-spacing: 1px;
-    text-align: center;
-    vertical-align: middle;
-    width: 36.66%;
-}
-
-.content_text {
-    border-left: 1px solid #e0e0e0;
-    
-
-    .big-text {
-        vertical-align: top;
-        padding-top: 1.25em;
-    }
-
-    ul {
-        padding: 0;
-        width: 85%;
-        margin-left: 1.5em;
-        justify-content: center;
-
-        li {
-            font-size: 0.7em;
-            display: inline-block;
-            width: 30%;
-            color: #424242;
-            font-weight: 600;
-            font-size: 1em;
-            text-align: center;
-            padding-top: 1%;
-
-            a {
-                text-decoration: none;
-                color: #0277bd;
-            }
-        }
-    }
-}
-
-
 #skill h3 {
     position: static;
 }
@@ -143,6 +72,68 @@ import { skillText } from "../constants";
             height: auto;
             top: 68px;
             background-color: var(--mainBg-color);
+        }
+    }
+}
+
+.paper {
+    margin: 8% 8%;
+    background-color: white;
+    padding: 0.5em 0;
+    border: 1px solid #e0e0e0;
+    border-bottom-width: 3px;
+    border-radius: 1%;
+    box-shadow: 7px 7px 20px -10px #000;
+}
+
+.content {
+    display: table;
+    width: 100%;
+    padding-top: 1.5em;
+
+    &:last-child {
+        padding-bottom: 1.5em;
+    }
+
+    .content_inner {
+        display: table-row;
+
+        div {
+            display: table-cell;
+        }
+
+        .content_title {
+            letter-spacing: 1px;
+            text-align: center;
+            vertical-align: middle;
+            width: 36.66%;
+        }
+
+        .content_text {
+            border-left: 1px solid #e0e0e0;
+
+            ul {
+                padding: 0;
+                width: 85%;
+                margin-left: 1.5em;
+                justify-content: center;
+
+                li {
+                    font-size: 0.7em;
+                    display: inline-block;
+                    width: 30%;
+                    color: #424242;
+                    font-weight: 600;
+                    font-size: 1em;
+                    text-align: center;
+                    padding-top: 1%;
+
+                    a {
+                        text-decoration: none;
+                        color: #0277bd;
+                    }
+                }
+            }
         }
     }
 }

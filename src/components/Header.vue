@@ -23,8 +23,45 @@ import { headerMenu } from "../constants";
 
 
 <style lang="scss">
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+
+  a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+  }
+}
+
+.header_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(116, 99, 99, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 1em;
+}
+
+.header_logo {
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-left: 11%;
+
+  em {
+    font-size: 12px;
+    display: block;
+    color: var(--black200);
+  }
+}
+
 .header_menu {
-  margin-right:11%;
+  margin-right: 11%;
   text-align: center;
   padding: 1em;
 
@@ -103,93 +140,6 @@ import { headerMenu } from "../constants";
         width: 100%;
       }
     }
-  }
-}
-
-#header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 10000;
-
-  a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px;
-  }
-}
-
-.header_inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgba(116, 99, 99, 0.1);
-  backdrop-filter: blur(15px);
-  padding: 1em;
-}
-
-.header_logo {
-  font-size: 1.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 1;
-  margin-left:11%;
-
-  em {
-    font-size: 12px;
-    display: block;
-    color: var(--black200);
-  }
-}
-
-.header_profile {
-  display: flex;
-  align-items: center;
-
-  a {
-    text-transform: uppercase;
-    font-size: 16px;
-    padding: 14px;
-    position: relative;
-  }
-}
-
-.header_nav_mobile {
-  display: none;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-
-  span {
-    display: block;
-    width: 40px;
-    height: 2px;
-    background-color: var(--black);
-    margin-top: 19px;
-    position: relative;
-  }
-
-  span::before {
-    content: "";
-    width: 40px;
-    height: 2px;
-    background-color: var(--black);
-    position: absolute;
-    right: 0;
-    top: 6px;
-    transition: width 0.3s;
-  }
-
-  span::after {
-    content: "";
-    width: 40px;
-    height: 2px;
-    background-color: var(--black);
-    position: absolute;
-    left: 0;
-    bottom: 6px;
-    transition: width 0.3s;
   }
 }
 </style>

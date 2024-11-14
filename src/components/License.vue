@@ -9,11 +9,11 @@ import { licenseText } from "../constants";
         License
       </h2>
       <div class="timeline">
-        <div v-for="(item, index) in licenseText" :key="index" class="entry">
-          <div class="title">
+        <div v-for="(item, index) in licenseText" :key="index" class="timeline_inner">
+          <div class="timeline_date">
             <h3>{{ item.date }}</h3>
           </div>
-          <div class="body">
+          <div class="timeline_content">
             <p>{{ item.title }}</p>
             <ul>
               <li>{{ item.company }}</li>
@@ -93,12 +93,12 @@ import { licenseText } from "../constants";
   }
 }
 
-.entry {
+.timeline_inner {
   clear: both;
   text-align: left;
   position: relative;
 
-  .title {
+  .timeline_date {
     margin-bottom: .5em;
     float: left;
     width: 33%;
@@ -130,7 +130,7 @@ import { licenseText } from "../constants";
     }
   }
 
-  .body {
+  .timeline_content {
     margin: 0 0 3em;
     float: right;
     width: 66%;

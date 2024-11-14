@@ -1,7 +1,3 @@
-<script setup>
-import { homeText } from "../constants";
-</script>
-
 <template>
   <section id="home">
     <div class="home_inner">
@@ -30,23 +26,6 @@ import { homeText } from "../constants";
 
   @media (max-width: 800px) {
     justify-content: center;
-  }
-
-  .home_title {
-    text-align: center;
-    font-size: 7vw;
-    text-transform: uppercase;
-    line-height: 1;
-    font-weight: 800;
-    white-space: nowrap;
-    text-indent: -0.5vw;
-    letter-spacing: -0.3vw;
-    margin-top: 12%;
-    margin-bottom: 3%;
-
-    @media (max-width: 320px) {
-      display: none;
-    }
   }
 
   @keyframes RevealText {
@@ -79,7 +58,7 @@ import { homeText } from "../constants";
       position: relative;
       white-space: no-wrap;
       width: 355px;
-      margin-bottom:auto;
+      margin-bottom: auto;
     }
 
     .cursor {

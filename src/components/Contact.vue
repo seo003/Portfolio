@@ -4,7 +4,7 @@
       <h2 class="contact_title">
         contact
       </h2>
-      <div class="info">
+      <div class="contact_content">
         <h2><i class="bi bi-envelope-fill"></i> Email:</h2>
         <h3>sy030212@naver.com</h3>
         <h2><i class="bi bi-github"></i> Github:</h2>
@@ -17,7 +17,6 @@
 </template>
 
 <style lang="scss">
-
 #contact {
   h3 {
     position: static;
@@ -69,8 +68,7 @@
   }
 }
 
-// info
-.info {
+.contact_content {
   width: 70%;
   border-radius: 8px;
   box-shadow: 7px 7px 20px -10px #000;
@@ -79,6 +77,6 @@
   max-width: calc(100vw - 40px);
   box-sizing: border-box;
   position: relative;
-  background-color:white;
+  background-color: white;
 }
 </style>

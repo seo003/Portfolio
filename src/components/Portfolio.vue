@@ -31,12 +31,12 @@ const uniqueTypes = computed(() => {
       </div>
 
       <section class="gallery">
-        <div class="row">
+        <div class="gallery_inner">
           <ul>
             <li v-for="(item, index) in filteredPortText" :key="index">
-              <div class="image-container">
+              <div class="image_inner">
                 <img :src="item.img" :alt="item.title">
-                <div class="description_overlay">
+                <div class="description_inner">
                   <div class="description_content">
                     <b>{{ item.title }} ({{ item.date }})</b>
                     <p>{{ item.desc }}</p>
@@ -151,17 +151,15 @@ const uniqueTypes = computed(() => {
   }
 }
 
-// PROJECTS
 .gallery {
   padding: 40px 0 0px;
   position: relative;
   overflow: hidden;
 
   ul {
-    // padding-top: 50px;
     position: relative;
 
-    .image-container {
+    .image_inner {
       position: relative;
       perspective: 1000px;
       width: 100%;
@@ -172,7 +170,7 @@ const uniqueTypes = computed(() => {
         transition: transform 0.5s;
       }
 
-      .description_overlay {
+      .description_inner {
         position: absolute;
         top: 0;
         left: 0;
@@ -194,7 +192,7 @@ const uniqueTypes = computed(() => {
         transform: rotateY(180deg);
       }
 
-      &:hover .description_overlay {
+      &:hover .description_inner {
         opacity: 1;
       }
     }

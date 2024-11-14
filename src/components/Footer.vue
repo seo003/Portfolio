@@ -12,7 +12,6 @@
 
 
 <style lang="scss">
-
 .footer_inner {
   display: flex;
   align-items: center;
@@ -22,5 +21,4 @@
   padding: 1rem;
   text-align:center;
 }
-
 </style>
