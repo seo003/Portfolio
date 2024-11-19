@@ -15,3 +15,4 @@
 
 ## 🔗 링크
 https://seo003.github.io/portfolio/
+[![main](https://github.com/user-attachments/assets/569f82b5-0340-4962-97a4-8449aeddeaee)](https://seo003.github.io/portfolio/)
