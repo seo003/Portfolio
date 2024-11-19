@@ -4,7 +4,7 @@
       <div class="home_text">
         <h1>Welcome to My Portfolio Site!</h1>
         <span class="cursor">_</span>
-        <p>Thank You for Visiting</p>
+        <p>Thank You for Visiting :)</p>
       </div>
     </div>
   </section>

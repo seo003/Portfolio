@@ -26,15 +26,11 @@ import { skillText } from "../constants";
                                 </div>
                             </div>
                         </section>
-
                     </div>
-
                 </article>
-
             </div>
         </div>
     </section>
-
 </template>
 
 <style lang="scss">
@@ -110,7 +106,7 @@ import { skillText } from "../constants";
         }
 
         .content_text {
-            border-left: 1px solid #e0e0e0;
+            border-left: 1px solid #C4C3C3;
 
             ul {
                 padding: 0;

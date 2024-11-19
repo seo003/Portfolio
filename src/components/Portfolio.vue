@@ -116,7 +116,7 @@ const uniqueTypes = computed(() => {
       left: -9999px;
 
       &:checked+h3 {
-        background-color: rgba(116, 99, 99, 0.1);
+        background-color: #EDEBEB;
 
         &:before {
           box-shadow: inset 0 0 0 0.4375em black;
@@ -130,9 +130,10 @@ const uniqueTypes = computed(() => {
       padding: 0.375em 0.75em 0.375em 0.375em;
       border-radius: 99em;
       transition: 0.25s ease;
+      background-color:#FAFAFA;
 
       &:hover {
-        background-color: rgba(116, 99, 99, 0.1);
+        background-color: #EDEBEB;
       }
 
       &:before {
