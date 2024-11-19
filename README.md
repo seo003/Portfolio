@@ -7,8 +7,7 @@
 
 ## 📚 기술 스택
 ### Environment
-<img src="https://img.shields.io/badge/vscode-0854C1?style=for-the-badge&logo=vscode&logoColor=white"> 
-<img src="https://img.shields.io/badge/nodedotjs-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white">  
+<img src="https://img.shields.io/badge/vscode-0854C1?style=for-the-badge&logo=vscode&logoColor=white"> <img src="https://img.shields.io/badge/nodedotjs-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white">  
 
 ### Framework
 
