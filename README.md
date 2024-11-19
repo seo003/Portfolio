@@ -1,29 +1,18 @@
-# portfolio
+# Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+포트폴리오 사이트
 
-## Recommended IDE Setup
+## 🗓️ 개발 일정
+2024.10 ~ 2024.11 [2개월]
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📚 기술 스택
+### Environment
+<img src="https://img.shields.io/badge/vscode-0854C1?style=for-the-badge&logo=vscode&logoColor=white"> 
+<img src="https://img.shields.io/badge/nodedotjs-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white">  
 
-## Customize configuration
+### Framework
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"> 
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## 🔗 링크
+https://seo003.github.io/portfolio/
