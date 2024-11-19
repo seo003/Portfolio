@@ -53,13 +53,13 @@
     padding-top: 120px;
 
     h1 {
-      animation: RevealText 6s steps(30, end) forwards; /* 애니메이션 종료 후 상태 유지 */
+      animation: RevealText 6s steps(30, end) forwards; 
       display: inline-block;
       font-size: 65px;
-      overflow: hidden; /* 글자 잘리지 않도록 */
+      overflow: hidden;
       position: relative;
-      white-space: nowrap; /* 텍스트 줄바꿈 방지 */
-      width: 0; /* 초기 상태에서 너비 0 */
+      white-space: nowrap;
+      width: 0;
       margin-bottom: auto;
     }
 
