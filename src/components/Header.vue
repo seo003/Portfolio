@@ -6,7 +6,7 @@ import { headerMenu } from "../constants";
   <header id="header" role="banner">
     <div class="header_inner">
       <div class="header_logo">
-        <a href="/">portfolio</a>
+        <a href="#home">portfolio</a>
         <em>Kim Seo Young</em>
       </div>
       <div class="header_menu borderXwidth">
